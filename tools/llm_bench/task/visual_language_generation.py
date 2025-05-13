@@ -201,6 +201,7 @@ def run_visual_language_generation_genai(
     inputs = [inputs] if not isinstance(inputs, (list, tuple)) else inputs
     for input_data in inputs:
         if "media" in input_data:
+            print(">>>>>>>>>", input_data["media"])
             if input_data["media"] is not None:
                 image_paths = input_data["media"].split(';')
                 for path in image_paths:
@@ -229,6 +230,8 @@ def run_visual_language_generation_genai(
         kwargs["images"] = images
     elif len(images) == 1:
         kwargs["images"] = images[0]
+    print(">>>>>>>>>>>>> ", len(images))
+
     start = time.perf_counter()
     generation_result = model.generate(prompts[0], generation_config=gen_config, **kwargs)
     end = time.perf_counter()

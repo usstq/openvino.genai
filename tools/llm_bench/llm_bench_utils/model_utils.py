@@ -338,7 +338,7 @@ def init_timestamp(num_iters, prompt_list, prompt_idx_list):
 
 
 def resolve_media_file_path(file_path, prompt_file_path):
-    file_path = None
+    #file_path = None
     if file_path is not None:
         paths_ori = file_path.split(';')
         paths_new = []
